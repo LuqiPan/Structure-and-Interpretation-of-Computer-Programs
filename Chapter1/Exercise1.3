@@ -1,0 +1,12 @@
+(define (max x y)
+  (if (> x y)
+    x
+    y))
+
+(define (max-of-three x y z)
+  (max x (max y z)))
+
+(define (sum-of-larger-nums a b c)
+  (cond ((= a (max-of-three a b c)) (+ (square a) (square (max b c))))
+        ((= b (max-of-three a b c)) (+ (square b) (square (max a c))))
+        ((= c (max-of-three a b c)) (+ (square c) (square (max a b))))))
